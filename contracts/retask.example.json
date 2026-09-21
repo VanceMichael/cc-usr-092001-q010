@@ -1,0 +1,41 @@
+{
+  "trigger_event": {
+    "schema_version": "1",
+    "event_id": "EV-EXAMPLE-SIGHT-1",
+    "subject_ref": "TASK-YB-01",
+    "type": "person.sighted",
+    "occurred_at": "2026-09-21T09:40:00+08:00",
+    "source": "ground-terminal-team-3",
+    "source_sequence": 21,
+    "payload": {
+      "sighting_id": "SIGHT-EXAMPLE-1",
+      "task_ref": "TASK-YB-01",
+      "team_ref": "TEAM-3",
+      "latitude": 27.12,
+      "longitude": 101.66,
+      "location_ref": "LOC-REF-77"
+    },
+    "payload_digest": "sha256:由提交方对规范化载荷计算"
+  },
+  "controller_derives": [
+    { "type": "retask.proposed", "note": "trigger_type=PERSON_LOCATION_UPDATE, required_role=GROUND_TEAM" },
+    { "type": "route.pinned", "note": "航线立即钉死，自动策略不得变更" }
+  ],
+  "required_confirmation": {
+    "schema_version": "1",
+    "event_id": "EV-EXAMPLE-RETASK-CONFIRM",
+    "subject_ref": "DERIVED-改派标识",
+    "type": "retask.confirmed",
+    "occurred_at": "2026-09-21T09:46:00+08:00",
+    "source": "ground-leader-terminal",
+    "source_sequence": 1,
+    "operator": "GROUND_TEAM-LEAD-3",
+    "payload": {
+      "retask_id": "DERIVED-改派标识",
+      "confirmed_by": "GROUND_TEAM-LEAD-3",
+      "role": "GROUND_TEAM",
+      "plan_id": "PLAN-EXAMPLE-B"
+    },
+    "payload_digest": "sha256:由提交方对规范化载荷计算"
+  }
+}

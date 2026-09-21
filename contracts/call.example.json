@@ -1,0 +1,45 @@
+{
+  "request": {
+    "schema_version": "1",
+    "event_id": "EV-EXAMPLE-CALL-911",
+    "subject_ref": "CALL-EXAMPLE-911",
+    "type": "call.requested",
+    "occurred_at": "2026-09-21T09:05:00+08:00",
+    "source": "ground-terminal-team-3",
+    "source_sequence": 18,
+    "device_serial": "TERM-TEAM-3",
+    "operator": "GROUND_TEAM-3",
+    "payload": {
+      "call_id": "CALL-EXAMPLE-911",
+      "station_ref": "STN-01",
+      "team_ref": "TEAM-3",
+      "priority": 1,
+      "subject": "被困伤员急救指导"
+    },
+    "payload_digest": "sha256:由提交方对规范化载荷计算"
+  },
+  "response_ok": {
+    "event_id": "DERIVED-…",
+    "offset": 27,
+    "derived": [
+      {
+        "event_id": "DERIVED-…",
+        "type": "call.preempted",
+        "summary": "高优先级通话 CALL-EXAMPLE-911 抢占 CALL-EXAMPLE-104，补偿条目 COMP-CALL-EXAMPLE-911-CALL-EXAMPLE-104"
+      },
+      {
+        "event_id": "DERIVED-…",
+        "type": "call.admitted",
+        "summary": "高优先级通话抢占后接入"
+      }
+    ]
+  },
+  "response_duplicate": {
+    "event_id": "EV-EXAMPLE-CALL-911",
+    "duplicate": true
+  },
+  "response_buffered": {
+    "event_id": "EV-EXAMPLE-CALL-912",
+    "buffered": true
+  }
+}

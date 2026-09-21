@@ -1,8 +1,20 @@
 {
   "schema_version": "1",
-  "event_id": "EVENT-010-DEMO",
-  "subject_ref": "SUBJECT-010-DEMO",
-  "occurred_at": "2026-09-19T09:30:00+08:00",
-  "source_sequence": 1,
-  "payload_digest": "sha256:demo"
+  "event_id": "EV-EXAMPLE-PHASE-NETWORK-UP",
+  "subject_ref": "TASK-YB-01",
+  "type": "task.phase_changed",
+  "occurred_at": "2026-09-21T08:20:00+08:00",
+  "source": "flightops-vehicle-terminal-7",
+  "source_sequence": 2,
+  "device_serial": "DRONE-YL-01",
+  "operator": "FLIGHT-OPS-DESK-1",
+  "payload": {
+    "task_ref": "TASK-YB-01",
+    "from_phase": "RELOCATE",
+    "to_phase": "NETWORK_UP",
+    "drone_serial": "DRONE-YL-01",
+    "reason": "抵达核心空域，空中基站开始组网",
+    "plan_id": "PLAN-A"
+  },
+  "payload_digest": "sha256:由提交方对规范化载荷计算"
 }
